@@ -1,10 +1,12 @@
 import './App.css';
-import Navbar from '../src/components/navbar/navbar.tsx'
+import Background from './components/background/Background.tsx';
+import Navbar from './components/navbar/Navbar.tsx'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar></Navbar>
+      <Background></Background>
     </div>
   );
 }

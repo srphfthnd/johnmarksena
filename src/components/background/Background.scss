@@ -1,0 +1,53 @@
+:host {
+    display: block;
+    z-index: 0;
+    position: absolute;
+}
+
+.bg {
+    background-image: url("../../assets/pictures/asset1.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+
+    .row {
+        flex: 20%;
+        display: flex;
+        flex-direction: column-reverse;
+
+        .header {
+            flex: 20%;
+            position: relative;
+            top: 100px;
+            color: white;
+            text-align: right;
+            line-height: 72px;
+            padding: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255 ,0.5);
+        }
+
+        .title {
+            position: relative;
+        }
+
+        .name {
+            font-size: 72px;
+            white-space: pre-line;
+        }
+        
+        .sub-title {
+            font-size: 20px;
+            white-space: nowrap;
+            
+            float: right;
+        }
+        
+    }
+}
+
