@@ -5,8 +5,8 @@ import Navbar from './components/navbar/Navbar.tsx'
 function App() {
   return (
     <div className="App">
-      <Navbar></Navbar>
-      <Background></Background>
+      <Navbar/>
+      <Background/>
     </div>
   );
 }
