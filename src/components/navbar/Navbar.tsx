@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
 import './Navbar.scss'
 
 function Navbar() {
@@ -10,12 +9,17 @@ function Navbar() {
     
     return ([
         <div className="nav">
-            <ul className="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
+            <div className="nav-icon">
+                <span>Sena's Personal Website</span>
+            </div>
+            <div className="nav-selection">
+                <ul className="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
         </div>
     ]);
 }
@@ -33,7 +37,7 @@ const changeColorNavBar = () => {
             menuList.style.color = 'black';
             changeMenuOptionsColor(options, currentScrollHeight, maxScrollHeight);
 
-    } else if(currentScrollHeight === maxScrollHeight){
+    } else if(currentScrollHeight >= maxScrollHeight){
         navBar.classList.remove('after-scroll');
         changeMenuOptionsColor(options, currentScrollHeight, maxScrollHeight);
     }
@@ -41,6 +45,8 @@ const changeColorNavBar = () => {
 }
 
 const changeMenuOptionsColor = (options: HTMLCollection, currentScrollHeight: number, maxScrollHeight: number) => {
+    const title = document.querySelector(".nav-icon") as HTMLElement;
+    const span = title.querySelector('span');
     let aElem;
     let color;
 
@@ -51,6 +57,7 @@ const changeMenuOptionsColor = (options: HTMLCollection, currentScrollHeight: nu
         option = option as HTMLElement;
         aElem = option.querySelector('a');
         aElem != null && (aElem.style.color = color);
+        span != null && (span.style.color = color);
     }
 }
 
