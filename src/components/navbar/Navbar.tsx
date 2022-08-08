@@ -15,9 +15,10 @@ function Navbar() {
             <div className="nav-selection">
                 <ul className="nav-menu">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#contact">Contact</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -30,8 +31,7 @@ const changeColorNavBar = () => {
     const menuList = document.querySelector('.nav-menu') as HTMLElement;
     const options = menuList.children;
     const currentScrollHeight = wrapElement.getBoundingClientRect().bottom;
-    const maxScrollHeight = wrapElement.scrollHeight - 100;
-
+    const maxScrollHeight = wrapElement.getBoundingClientRect().height;
     if(currentScrollHeight < maxScrollHeight){
             navBar.classList.add('after-scroll');
             menuList.style.color = 'black';

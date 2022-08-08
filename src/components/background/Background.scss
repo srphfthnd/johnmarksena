@@ -15,21 +15,21 @@
 .main-container {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 
     .row {
-        flex: 20%;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: row-reverse;
 
         .header {
-            flex: 20%;
             position: relative;
-            top: 100px;
+            top: 20vh;
             color: white;
             text-align: right;
             line-height: 72px;
             padding: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255 ,0.5);
+            width: 50vh;
+            height: 90vh;
         }
 
         .title {
@@ -43,9 +43,38 @@
         
         .sub-title {
             font-size: 20px;
+            padding-bottom: 20px;
             white-space: nowrap;
+            border-bottom: 1px solid rgba(255, 255, 255 ,0.5);
+        }
+
+        &.body {
+            flex-direction: column;
+            padding: 0 20vh; 
             
-            float: right;
+            .content {
+                display: table;
+                flex-direction: row;
+
+                .sub-header {
+                    width: 50vh;
+                    display: table-cell;
+                    height: 50vh;
+                    vertical-align: middle;
+                    flex: 30%;
+                    text-align: center;
+                    margin: auto;
+                }
+    
+                .description {
+                    display: table-cell;
+                    height: 50vh;
+                    vertical-align: middle;
+                    flex: 70%;
+                    text-align: left;
+                    margin: auto;
+                }
+            }
         }
         
     }
